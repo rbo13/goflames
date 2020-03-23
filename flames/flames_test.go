@@ -14,7 +14,7 @@ var nameTests = []struct {
 }{
 	{
 		title:     "Should Be Married",
-		names:     []string{"jepjeply", "beverly"},
+		names:     []string{"richard", "beverly"},
 		out:       "ichadbevely",
 		flamesOut: "Married",
 	},
