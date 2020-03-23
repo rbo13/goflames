@@ -46,7 +46,6 @@ func Pair(name1, name2 string) string {
 
 // Get returns the `FLAMES` value ot the pair.
 func Get(pair string) string {
-
 	var FLAMES = "FLAMES"
 	var flamesLength = 6
 	var index int
