@@ -2,28 +2,54 @@
 <html>
   <head>
     <title> Flames </title>
+    <link rel="stylesheet" type="text/css" href="/assets/build/css/tailwind.css">
   </head>
 
-  <body>
-    <h1>F L A M E Generator</h1>
+  <body class="flex justify-center">
+    <div class="max-w-sm lg:max-w-full lg:flex">
+      <form action="/" method="POST" class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label
+            for="name1"
+            class="block text-gray-700 text-sm font-bold mb-2">
+              Name 1:
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            name="name1"
+            id="name1"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="name2"
+            class="block text-gray-700 text-sm font-bold mb-2">
+              Name 2:
+          </label>
 
-    <form action="/" method="POST">
-      <div>
-        <label for="name1"> Name 1: </label>
-        <input type="text" name="name1" id="name1" />
-      </div>
-      <div>
-        <label for="name2"> Name 2: </label>
-        <input type="text" name="name2" id="name2" />
-      </div>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            name="name2"
+            id="name2"
+          />
+        </div>
 
-      <button type="submit"> Generate </button>
-    </form>
+        <div class="flex items-center justify-between">
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit">
+              Generate
+          </button>
+        </div>
+      </form>
 
-    {{ if .generated }}
-      <div>
-        Output: {{ .result }}
-      </div>
-    {{ end }}
+      {{ if .generated }}
+        <div>
+          Output: {{ .result }}
+        </div>
+      {{ end }}
+    </div>
   </body>
 </html>
