@@ -12,24 +12,20 @@
         <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="POST">
           <div class="flex flex-col mb-4 md:w-full">
             <label class="mb-2 uppercase tracking-wide font-bold text-lg text-grey-darkest" for="name">Name: </label>
-            <input class="border rounded py-2 px-3" type="text" name="name" id="name" value="{{ .name }}">
+            <input class="shadow appearance-none border rounded py-2 px-3" type="text" name="name" id="name" value="{{ .name }}">
           </div>
 
           <div class="flex flex-col mb-4 md:w-full">
             <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="partner">Partner: </label>
-            <input class="border rounded py-2 px-3" type="text" name="partner" value="{{ .partner }}" id="partner">
+            <input class="shadow appearance-non border rounded py-2 px-3" type="text" name="partner" value="{{ .partner }}" id="partner">
           </div>
 
-          <button class="w-full block bg-teal-500 hover:bg-teal-dark-300 text-white uppercase text-lg mx-auto p-4 rounded" type="submit">Generate</button>
+          <button class="shadow w-full block bg-teal-500 hover:bg-teal-dark-300 text-white uppercase text-lg mx-auto p-4 rounded" type="submit">Generate</button>
         </form>
         {{ if .generated }}
-          <span class="flex flex-row items-center w-full">
-            Result of
-              <p class="ml-1 font-bold">{{ .name }}</p>
-              <p class="ml-1 mr-1">and</p>
-              <p class="font-bold">{{ .partner }}</p> :
-              <p class="uppercase font-bold ml-1">{{ .result }}
-          </span>
+          <div class="flex-row items-center w-full">
+            <h1 class="text-center">{{ .name }} and {{ .partner }} is {{ .result }}</h1>
+          </div>
         {{ end }}
       </div>
     </div>

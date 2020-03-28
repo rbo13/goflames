@@ -58,16 +58,19 @@ func main() {
 
 	// handle submit
 	app.Post("/", func(c *fiber.Ctx) {
-		name := strings.ToLower(c.FormValue("name"))
-		partner := strings.ToLower(c.FormValue("partner"))
+		notFormattedName := c.FormValue("name")
+		notFormattedPartner := c.FormValue("partner")
+
+		name := strings.ToLower(notFormattedName)
+		partner := strings.ToLower(notFormattedPartner)
 
 		pair := flame.Pair(name, partner)
 		result := flame.GetResult(pair)
 
 		data := fiber.Map{
 			"result":    result,
-			"name":      name,
-			"partner":   partner,
+			"name":      notFormattedName,
+			"partner":   notFormattedPartner,
 			"generated": true,
 		}
 
