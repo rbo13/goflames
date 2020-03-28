@@ -5,51 +5,33 @@
     <link rel="stylesheet" type="text/css" href="/assets/build/css/tailwind.css">
   </head>
 
-  <body class="flex justify-center">
-    <div class="max-w-sm lg:max-w-full lg:flex">
-      <form action="/" method="POST" class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div class="mb-4">
-          <label
-            for="name1"
-            class="block text-gray-700 text-sm font-bold mb-2">
-              Name 1:
-          </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            name="name1"
-            id="name1"
-          />
-        </div>
-        <div class="mb-6">
-          <label
-            for="name2"
-            class="block text-gray-700 text-sm font-bold mb-2">
-              Name 2:
-          </label>
+  <body>
+    <div class="flex items-center h-screen w-full lg:max-w-full">
+      <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
+        <h1 class="block w-full font-bold text-center text-grey-darkest mb-6">F.L.A.M.E Generator</h1>
+        <form class="mb-4 md:flex md:flex-wrap md:justify-between" action="/" method="POST">
+          <div class="flex flex-col mb-4 md:w-full">
+            <label class="mb-2 uppercase tracking-wide font-bold text-lg text-grey-darkest" for="name">Name: </label>
+            <input class="border rounded py-2 px-3" type="text" name="name" id="name" value="{{ .name }}">
+          </div>
 
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            name="name2"
-            id="name2"
-          />
-        </div>
+          <div class="flex flex-col mb-4 md:w-full">
+            <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="partner">Partner: </label>
+            <input class="border rounded py-2 px-3" type="text" name="partner" value="{{ .partner }}" id="partner">
+          </div>
 
-        <div class="flex items-center justify-between">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit">
-              Generate
-          </button>
-        </div>
-      </form>
-
-      {{ if .generated }}
-        <div>
-          Output: {{ .result }}
-        </div>
-      {{ end }}
+          <button class="w-full block bg-teal-500 hover:bg-teal-dark-300 text-white uppercase text-lg mx-auto p-4 rounded" type="submit">Generate</button>
+        </form>
+        {{ if .generated }}
+          <span class="flex flex-row items-center w-full">
+            Result of
+              <p class="ml-1 font-bold">{{ .name }}</p>
+              <p class="ml-1 mr-1">and</p>
+              <p class="font-bold">{{ .partner }}</p> :
+              <p class="uppercase font-bold ml-1">{{ .result }}
+          </span>
+        {{ end }}
+      </div>
     </div>
   </body>
 </html>
