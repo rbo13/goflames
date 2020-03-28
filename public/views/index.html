@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Flames </title>
+  </head>
+
+  <body>
+    <h1>F L A M E Generator</h1>
+
+    <form action="/" method="POST">
+      <div>
+        <label for="name1"> Name 1: </label>
+        <input type="text" name="name1" id="name1" />
+      </div>
+      <div>
+        <label for="name2"> Name 2: </label>
+        <input type="text" name="name2" id="name2" />
+      </div>
+
+      <button type="submit"> Generate </button>
+    </form>
+
+    {{ if .generated }}
+      <div>
+        Output: {{ .result }}
+      </div>
+    {{ end }}
+  </body>
+</html>
