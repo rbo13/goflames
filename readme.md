@@ -3,13 +3,10 @@
 Web App that generates the famous childhood game F L A M E.
 
 
-## Related:
-[flame](https://github.com/rbo13/flame)
-
-
 ### Pre-requisite:
 
 1. Install [yarn](https://yarnpkg.com)/[npm](https://www.npmjs.com)
+
 
 
 ### Installation:
@@ -28,5 +25,11 @@ $ npm run build # if using npm
 ### Running:
 ```sh
 $ cd <to/root/project>
+$ cp -a .env.example .env
 $ go run main.go
 ```
+
+
+## Related:
+[flame](https://github.com/rbo13/flame)
+
