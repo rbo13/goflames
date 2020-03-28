@@ -1,0 +1,18 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "Web App to play the game F L A M E",
+  "main": "index.html",
+  "repository": "https://github.com/rbo13/goflames",
+  "author": "Richard Burk",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "postcss assets/css/tailwind.css -o assets/build/css/tailwind.css"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
+  }
+}
