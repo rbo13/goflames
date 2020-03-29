@@ -8,7 +8,6 @@ RUN xz -d -c /usr/local/upx-3.95-amd64_linux.tar.xz | \
     chmod a+x /bin/upx
 
 COPY . .
-RUN ls -ah
 RUN GO111MODULE=on CGO_ENABLED=0 GOOS=linux \
     go build  -a -tags netgo -ldflags '-w -s'  main.go && \
     upx main
@@ -16,6 +15,8 @@ RUN GO111MODULE=on CGO_ENABLED=0 GOOS=linux \
 FROM scratch
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /build/.env .env
+COPY --from=build /build/public /public
+COPY --from=build /build/public/assets /public/assets
 COPY --from=build /build/main /main
 WORKDIR /
 EXPOSE 8000
