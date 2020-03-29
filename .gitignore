@@ -1,5 +1,6 @@
 # Public
 public/node_modules
+public/assets/build/*
 
 # Binaries for programs and plugins
 *.exe
