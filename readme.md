@@ -21,6 +21,12 @@ $ yarn run build # to build the css assets
 $ npm run build # if using npm
 ```
 
+### Building the Assets:
+```sh
+$ cd public
+$ yarn build # if using yarn;
+$ npm run build # if using npm
+```
 
 ### Running:
 ```sh
