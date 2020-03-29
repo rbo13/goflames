@@ -35,6 +35,20 @@ $ cp -a .env.example .env
 $ go run main.go
 ```
 
+### Running with module reload:
+```sh
+$ go get -u github.com/cosmtrek/air # install air using Go
+
+# without go, with linux
+$ curl -fLo air https://git.io/linux_air
+
+# copy .air.example.conf to .air.conf
+$ cp -a .air.example.conf .air.conf
+
+# run application using `air`
+$ air
+```
+
 
 ## Related:
 [flame](https://github.com/rbo13/flame)
