@@ -11,6 +11,7 @@ require (
 	github.com/gofiber/recover v0.0.2
 	github.com/joho/godotenv v1.3.0
 	github.com/klauspost/compress v1.10.3 // indirect
+	github.com/markbates/pkger v0.15.0
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/rbo13/flame v0.0.0-20200327153623-31e8db0a457a
